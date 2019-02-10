@@ -3,33 +3,29 @@ const readline = require('readline-sync');
 var answer
 
 function multiply(a,b) {
-    var y;
-    return y = a*b;
+    return a*b;
 }
 
 function add(a,b) {
-    var y;
-    return y = Number(a) + Number(b);
+    return a+b;
 }
 
 function subtract(a,b) {
-    var y;
-    return y = a-b;
+    return a-b;
 }
 
 function divide(a,b) {
-    var y;
-    return y = a/b;
+    return a/b;
 }
 
 console.log('Please enter the operator:');
 const oper = readline.prompt();
 
 console.log('Please enter the first number:');
-const x1 = readline.prompt();
+const x1 = +readline.prompt();
 
 console.log('Please enter the second number:');
-const x2 = readline.prompt();
+const x2 = +readline.prompt();
 
 
 // if (oper == '+') {

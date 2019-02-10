@@ -8,7 +8,7 @@ function multiply(a,b) {
 }
 
 function add(a,b) {
-    return Number(a) + Number(b);
+    return a+b;
 }
 
 function subtract(a,b) {
@@ -25,13 +25,13 @@ console.log('Please enter the operator:');
 const oper = readline.prompt();
 
 console.log('How many numbers do you want to ' + oper + '?');
-const totnum = readline.prompt();
+const totnum = +readline.prompt();
 
 numbers = new Array();
 for (i = 0; i <totnum; i++) {
     var j = i+1
     console.log('Please enter number ' + j + ':');
-    const x1 = readline.prompt();
+    const x1 = +readline.prompt();
     numbers = numbers.concat(Array(x1))
 }
 

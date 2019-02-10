@@ -1,8 +1,16 @@
+const readline = require('readline-sync');
 var x
 var y
 var z
 
-z = [1,2,3]
+console.log('Please enter a number:');
+const response = readline.prompt();
+// const number = +response;
 
+console.log('Please enter a number:');
+const response2 = readline.prompt();
+// const number = +response;
 
-console.log('The answer is ' + z[2]);
+var a =response + response2;
+
+console.log('The answer is ' + a);

@@ -13,7 +13,7 @@ function printWelcomeMessage() {
 
 function readInNumber(a) {
     console.log(a);
-    var num = readline.prompt();
+    const num = readline.prompt();
     if (isNaN(num)) {
         console.log('That is not a number, try again');
         return readInNumber(a)
@@ -57,8 +57,8 @@ function performOneCalculation(a,b,c) {
 }
 
 function performFullCalculation(operator,numbers) {
-    var answer = numbers[0]
-    for (var i = 1; i <numbers.length; i++) {
+    answer = numbers[0]
+    for (i = 1; i <numbers.length; i++) {
         answer = performOneCalculation(operator,answer,numbers[i])
     }
     return answer
@@ -68,6 +68,6 @@ printWelcomeMessage();
 while (true) {
     const operator = getOperator();
     const numbers = getNumbers(operator);
-    const answer = performFullCalculation(operator,numbers);
+    answer = performFullCalculation(operator,numbers);
     console.log('The answer is ' + answer);
 }

@@ -4,15 +4,7 @@ var answer
 var operator
 
 function printWelcomeMessage() {
-    console.log('Welcome to the calculator!');
-    console.log('==========================');
-}
-
-function printCalculatorModeMessage() {
-    console.log()
-    console.log('Which calculator mode do you want?');
-    console.log(' 1) Arithmetic');
-    console.log(' 2) Vowel counting');
+    console.log('Welcome to the calculator! \n ==========================');
 }
 
 function readInNumber(a) {
@@ -26,8 +18,8 @@ function readInNumber(a) {
     }
 }
 
-function getOperator() {
-    console.log('What operator do you want to use?');
+function getString(a) {
+    console.log(a);
     return readline.prompt();
 }
 
@@ -68,16 +60,28 @@ function performFullCalculation(operator,numbers) {
     return answer
 }
 
+function performVowelCounter(str) {
+    let counts = {A: 0, E: 0, I: 0, O: 0, U: 0};
+    for (let char of str) {
+        const upperChar = char.toUpperCase();
+        if (counts.hasOwnProperty(upperChar)) {
+            counts[upperChar]++;
+        }
+    }
+    console.log('\n A: ' + counts['A'] + '\n E: ' + counts['E'] + '\n I: ' + counts['I'] + '\n O: ' + counts['O'] + '\n U: ' + counts['U'])
+}
+
 printWelcomeMessage();
 while (true) {
-    printCalculatorModeMessage()
-    const calculatorMode =  readline.prompt()
+    const calculatorMode = readInNumber('\n Which calculator mode do you want? \n  1) Arithmetic \n  2) Vowel counting')
     if (calculatorMode == 1) {
-        const operator = getOperator();
+        const operator = getString('\n What operator do you want to use?');
         const numbers = getNumbers(operator);
         const answer = performFullCalculation(operator,numbers);
         console.log('The answer is ' + answer);
     } else if (calculatorMode == 2) {
-
+        const stringToCount = getString('\n Please enter a string:')
+        console.log('\n The vowel counts are:')
+        performVowelCounter(stringToCount)
     }
 }

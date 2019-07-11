@@ -73,7 +73,7 @@ function performVowelCounter(str) {
 
 printWelcomeMessage();
 while (true) {
-    const calculatorMode = readInNumber('\n Which calculator mode do you want? \n  1) Arithmetic \n  2) Vowel counting')
+    const calculatorMode = readInNumber('\n Which calculator mode do you want? \n  1) Arithmetic \n  2) Vowel counting \n  3) Exit')
     if (calculatorMode == 1) {
         const operator = getString('\n What operator do you want to use?');
         const numbers = getNumbers(operator);
@@ -83,5 +83,8 @@ while (true) {
         const stringToCount = getString('\n Please enter a string:')
         console.log('\n The vowel counts are:')
         performVowelCounter(stringToCount)
+    }
+    else if (calculatorMode == 3) {
+        break
     }
 }
